@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 793504fafa179e5428ab70f67bdacd22, type: 3}
+  m_Name: Area 1 - Wave 1
+  m_EditorClassIdentifier: 
+  enemyList:
+  - enemyFactory: {fileID: 11400000, guid: e38b7e5458713f3478442377a222739a, type: 2}
+    quantity: 5
+  - enemyFactory: {fileID: 11400000, guid: ab5930f6981168b42825aaeb32e35e45, type: 2}
+    quantity: 3
+  - enemyFactory: {fileID: 11400000, guid: c5af20a761946b244ba8ca94966df960, type: 2}
+    quantity: 1

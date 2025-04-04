@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cced7019a5f5d9570f88fdc17461e50, type: 3}
+  m_Name: Settings
+  m_EditorClassIdentifier:
+  TotalMessagesSubmitted: 0
+  TotalMessagesFailed: 0
+  DesignMessagesSubmitted: 0
+  DesignMessagesFailed: 0
+  QualityMessagesSubmitted: 0
+  QualityMessagesFailed: 0
+  ErrorMessagesSubmitted: 0
+  ErrorMessagesFailed: 0
+  BusinessMessagesSubmitted: 0
+  BusinessMessagesFailed: 0
+  UserMessagesSubmitted: 0
+  UserMessagesFailed: 0
+  CustomArea:
+  gameKey:
+  - 732c8cdfd524ae99b8682a3b251aa866
+  secretKey:
+  - 9498b2da8f8eb593b01fd5130038aac5d38c8a8c
+  Build:
+  - 0.1
+  SelectedPlatformOrganization:
+  - DIYA GAMES
+  SelectedPlatformStudio:
+  - DIYA GAMES
+  SelectedPlatformGame:
+  - Land Invader
+  SelectedPlatformGameID:
+  - 227081
+  SelectedOrganization:
+  - 1
+  SelectedStudio:
+  - 1
+  SelectedGame:
+  - 2
+  NewVersion:
+  Changes:
+  SignUpOpen: 0
+  StudioName:
+  GameName:
+  OrganizationName:
+  OrganizationIdentifier:
+  EmailGA: sergei.sprill@gmail.com
+  IntroScreen: 0
+  InfoLogEditor: 1
+  InfoLogBuild: 1
+  VerboseLogBuild: 0
+  UseManualSessionHandling: 0
+  SendExampleGameDataToMyGame: 0
+  InternetConnectivity: 0
+  CustomDimensions01: []
+  CustomDimensions02: []
+  CustomDimensions03: []
+  ResourceItemTypes: []
+  ResourceCurrencies: []
+  LastCreatedGamePlatform: 0
+  Platforms:
+  - 11
+  CurrentInspectorState: 1
+  ClosedHints: []
+  DisplayHints: 0
+  DisplayHintsScrollState: {x: 0, y: 0}
+  Logo: {fileID: 2800000, guid: 35bb4c528478fe741bc83ccec2599998, type: 3}
+  UpdateIcon: {fileID: 2800000, guid: 23b1d89c7dbffa241986bdc0ffe98e4f, type: 3}
+  InfoIcon: {fileID: 2800000, guid: 41a223ac3733ad44ba7a17a25a840afb, type: 3}
+  DeleteIcon: {fileID: 2800000, guid: d203467bfc9a501458b48edd2c908c52, type: 3}
+  GameIcon: {fileID: 2800000, guid: c871d9e6d3b20bc4d8cb97f4d2598ecb, type: 3}
+  HomeIcon: {fileID: 2800000, guid: 189382c03f59349488f8912b787d2b6f, type: 3}
+  InstrumentIcon: {fileID: 2800000, guid: f6711f0c13d3ce04e99bd43173b76e94, type: 3}
+  QuestionIcon: {fileID: 2800000, guid: 8686b86316681f4488a974336058178c, type: 3}
+  UserIcon: {fileID: 2800000, guid: 58523362f6c891c41b703899f2d441f8, type: 3}
+  AmazonIcon: {fileID: 0}
+  GooglePlayIcon: {fileID: 0}
+  iosIcon: {fileID: 0}
+  macIcon: {fileID: 0}
+  windowsPhoneIcon: {fileID: 0}
+  UsePlayerSettingsBuildNumber: 0
+  SubmitErrors: 1
+  NativeErrorReporting: 0
+  MaxErrorCount: 10
+  SubmitFpsAverage: 0
+  SubmitFpsCritical: 0
+  IncludeGooglePlay: 1
+  FpsCriticalThreshold: 20
+  FpsCirticalSubmitInterval: 1
+  PlatformFoldOut:
+  - 1
+  CustomDimensions01FoldOut: 0
+  CustomDimensions02FoldOut: 0
+  CustomDimensions03FoldOut: 0
+  ResourceItemTypesFoldOut: 0
+  ResourceCurrenciesFoldOut: 0
+  EnableMemoryHistogram: 0
+  EnableHealthEvent: 0
+  EnableFPSHistogram: 0
+  EnableSDKInitEvent: 0
+  EnableHardwareTracking: 0
+  EnableMemoryTracking: 0
