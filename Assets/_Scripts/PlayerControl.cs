@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour, IStateUser
 {
-    public static PlayerControl instance { get; private set; }
+    public static PlayerControl instance;
     public IStateUser user { get => this; }
 
-    public PlayerStats stats { get; set; }
+    public PlayerStats stats;
 
-    public float speed { get; set; }
-    public Vector2 direction { get; set; }
+    public float speed { get; private set; }
+    public Vector2 direction { get; private set; }
     [SerializeField] List<StateNode> stateList;
-    public Dictionary<State, StateNode> stateStorage { get; set; } = new();
-    public StateMachine stateMachine { get; set; }
-    public Animator animator { get; set; }
+    public Dictionary<State, StateNode> stateStorage = new();
+    public StateMachine stateMachine;
+    public Animator animator { get; private set; }
 
-    public Transform skin { get; set; }
-    public int skinIndex { get; set; } = 1;
-    public CharacterController characterController { get; set; }
+    public Transform skin { get; private set; }
+    public int skinIndex = 1;
+    public CharacterController characterController { get; private set; }
 
     const float GRAVITY_FORCE = 9.81f;
 
@@ -48,5 +48,22 @@ public class PlayerControl : MonoBehaviour, IStateUser
     public void ChangeStateTo(State state)
     {
         stateMachine.TransitionTo(stateStorage[state]);
+    }
+
+    public void UpdateSpeed()
+    {
+        speed = stats.speed;
+        animator.SetFloat("Speed", speed);
+    }
+
+    public void ResetSpeed()
+    {
+        speed = 0;
+        animator.SetFloat("Speed", 0);
+    }
+
+    public void SetDirection(Vector3 dir)
+    {
+        direction = dir;
     }
 }

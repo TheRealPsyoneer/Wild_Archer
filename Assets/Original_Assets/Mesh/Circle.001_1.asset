@@ -2,12 +2,12 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!43 &4300000
 Mesh:
-  serializedVersion: 11
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Circle.001
+  m_Name: Circle.001_1
+  serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
     firstByte: 0
@@ -17,7 +17,7 @@ Mesh:
     firstVertex: 0
     vertexCount: 122
     localAABB:
-      m_Center: {x: -0.9225139, y: -9.536743E-07, z: 0.00012169778}
+      m_Center: {x: -0.9225139, y: -0.0000009536743, z: 0.00012169778}
       m_Extent: {x: 0.9433612, y: 0.47027016, z: 0.064916804}
   m_Shapes:
     vertices: []
@@ -27,14 +27,14 @@ Mesh:
   m_BindPose:
   - e00: -0.019334434
     e01: 0.99981284
-    e02: 1.6577539E-07
+    e02: 0.00000016577539
     e03: 0.025176123
     e10: -0.9998129
     e11: -0.019334435
-    e12: -2.197921E-07
+    e12: -0.0000002197921
     e13: -0.037749566
-    e20: -2.1654583E-07
-    e21: -1.6999397E-07
+    e20: -0.00000021654583
+    e21: -0.00000016999397
     e22: 0.9999999
     e23: 0.0974736
     e30: 0
@@ -43,14 +43,14 @@ Mesh:
     e33: 1
   - e00: -0.021477515
     e01: 0.99976915
-    e02: -2.0877084E-07
+    e02: -0.00000020877084
     e03: 0.024095144
     e10: -0.99976915
     e11: -0.021477515
-    e12: 2.8857117E-09
+    e12: 0.0000000028857117
     e13: -0.504529
-    e20: -1.5988336E-09
-    e21: 2.0878467E-07
+    e20: -0.0000000015988336
+    e21: 0.00000020878467
     e22: 0.9999999
     e23: 0.09747371
     e30: 0
@@ -59,24 +59,21 @@ Mesh:
     e33: 1
   - e00: -0.03406907
     e01: 0.9994194
-    e02: -9.34933E-08
+    e02: -0.0000000934933
     e03: 0.009799197
     e10: -0.99941933
     e11: -0.034069065
-    e12: 4.5774518E-09
+    e12: 0.0000000045774518
     e13: -1.1349863
-    e20: 1.3895651E-09
-    e21: 9.359497E-08
+    e20: 0.0000000013895651
+    e21: 0.00000009359497
     e22: 0.9999999
     e23: 0.09747371
     e30: 0
     e31: 0
     e32: 0
     e33: 1
-  m_BoneNameHashes:
-  - 1786849800
-  - 1884630271
-  - 543546426
+  m_BoneNameHashes: 082a816aff2c55703adc6520
   m_RootBoneNameHash: 1786849800
   m_BonesAABB:
   - m_Min: {x: -0.44541007, y: -0.06768539, z: 0.032678492}
@@ -86,7 +83,7 @@ Mesh:
   - m_Min: {x: -0.4408046, y: -0.5820768, z: 0.03481085}
     m_Max: {x: 0.5423512, y: 0.7428483, z: 0.16251224}
   m_VariableBoneCountWeights:
-    m_Data: []
+    m_Data: 
   m_MeshCompression: 0
   m_IsReadable: 0
   m_KeepVertices: 1
@@ -160,60 +157,59 @@ Mesh:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_UV:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_Normals:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_Tangents:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_Weights:
       m_NumItems: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_NormalSigns:
       m_NumItems: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_TangentSigns:
       m_NumItems: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_FloatColors:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_BoneIndices:
       m_NumItems: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_Triangles:
       m_NumItems: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_UVInfo: 0
   m_LocalAABB:
-    m_Center: {x: -0.9225139, y: -9.536743E-07, z: 0.00012169778}
+    m_Center: {x: -0.9225139, y: -0.0000009536743, z: 0.00012169778}
     m_Extent: {x: 0.9433612, y: 0.47027016, z: 0.064916804}
   m_MeshUsageFlags: 1
-  m_CookingOptions: 30
-  m_BakedConvexCollisionMesh:
-  m_BakedTriangleCollisionMesh:
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
   m_MeshMetrics[0]: 1
   m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: -1
@@ -221,4 +217,4 @@ Mesh:
     serializedVersion: 2
     offset: 0
     size: 0
-    path:
+    path: 

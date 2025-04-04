@@ -6,7 +6,7 @@ public class SkinManager : MonoBehaviour
 {
     public static SkinManager instance;
 
-    public Transform[] skins;
+    public Transform[] skins { get; private set; }
 
     private void Awake()
     {
