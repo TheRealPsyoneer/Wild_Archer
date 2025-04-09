@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MyPriorityQueue<T>
 {
-    List<(T value, int priority)> queue;
+    List<(T value, float priority)> queue;
     public int Count => queue.Count;
 
     public MyPriorityQueue()
@@ -13,7 +13,7 @@ public class MyPriorityQueue<T>
         queue = new();
     }
 
-    public void Enqueue(T value, int priority)
+    public void Enqueue(T value, float priority)
     {
         queue.Add((value, priority));
 

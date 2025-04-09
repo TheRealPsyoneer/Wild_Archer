@@ -5,8 +5,6 @@ using UnityEngine;
 public class AttackEnemy : MonoBehaviour
 {
 
-
-
     private void OnTriggerEnter(Collider other)
     {
         
