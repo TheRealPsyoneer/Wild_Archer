@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyList:
   - enemyFactory: {fileID: 11400000, guid: e38b7e5458713f3478442377a222739a, type: 2}
-    quantity: 5
+    quantity: 1
   - enemyFactory: {fileID: 11400000, guid: ab5930f6981168b42825aaeb32e35e45, type: 2}
-    quantity: 3
+    quantity: 1
   - enemyFactory: {fileID: 11400000, guid: c5af20a761946b244ba8ca94966df960, type: 2}
     quantity: 1

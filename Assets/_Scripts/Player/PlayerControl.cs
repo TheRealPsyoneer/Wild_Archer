@@ -19,6 +19,7 @@ public class PlayerControl : MonoBehaviour, IStateUser
     public Transform skin { get; private set; }
     public int skinIndex = 1;
     public CharacterController characterController { get; private set; }
+    public EnemyControl currentTarget { get; private set; }
 
     const float GRAVITY_FORCE = 9.81f;
 
@@ -50,6 +51,11 @@ public class PlayerControl : MonoBehaviour, IStateUser
         stateMachine.TransitionTo(stateStorage[state]);
     }
 
+    public State GetCurrentState()
+    {
+        return stateMachine.currentState.state;
+    }
+
     public void UpdateSpeed()
     {
         speed = stats.speed;
@@ -65,5 +71,10 @@ public class PlayerControl : MonoBehaviour, IStateUser
     public void SetDirection(Vector3 dir)
     {
         direction = dir;
+    }
+
+    public void SetTarget(EnemyControl enemy)
+    {
+        currentTarget = enemy;
     }
 }

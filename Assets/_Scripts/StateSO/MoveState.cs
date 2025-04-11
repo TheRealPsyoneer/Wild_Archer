@@ -14,6 +14,8 @@ public class MoveState : StateNode
 
     public override void Execute()
     {
+        player.animator.SetFloat("X", player.direction.x);
+        player.animator.SetFloat("Z", player.direction.y);
         player.characterController.Move(new Vector3(player.direction.x, -1, player.direction.y) * Time.deltaTime * player.speed);
 
         float angle = Vector2.SignedAngle(Vector3.up, player.direction);

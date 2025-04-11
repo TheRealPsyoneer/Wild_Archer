@@ -23,7 +23,10 @@ public class PlayerMoveButton : MonoBehaviour, IPointerDownHandler, IDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
-        PlayerControl.SetDirection((eventData.position - startPoint).normalized);
+        if (PlayerControl.GetCurrentState() != State.Shot)
+        {
+            PlayerControl.SetDirection((eventData.position - startPoint).normalized);
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
