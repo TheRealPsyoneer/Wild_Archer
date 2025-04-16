@@ -13,10 +13,17 @@ public class IdleState : StateNode
 
     public override void Execute()
     {
-        if (player.speed > 0)
+        if (player.currentTarget != null)
+        {
+            player.ChangeStateTo(State.Shot);
+        }
+
+        else if (player.speed > 0)
         {
             player.ChangeStateTo(State.Move);
         }
+
+        
     }
 
     public override void Exit()

@@ -5703,6 +5703,7 @@ GameObject:
   - component: {fileID: 3232951634605326914}
   - component: {fileID: 3425220025070756354}
   - component: {fileID: 9219092862975796069}
+  - component: {fileID: 5565229821720469028}
   m_Layer: 8
   m_Name: PlayerTest
   m_TagString: Player
@@ -5822,6 +5823,21 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c3237cb0d3cbf2b4284eea25559e046d, type: 2}
   - {fileID: 11400000, guid: d7339f6323285ae4492fcc36bb067b5e, type: 2}
   skinIndex: 1
+  shooter: {fileID: 0}
+  isShooting: 0
+--- !u!114 &5565229821720469028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3258394749035487350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5697a058db8f9484c9b4ea3a41e300ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileFactory: {fileID: 11400000, guid: 32c721bb19095cd40bac76174c3cf50c, type: 2}
 --- !u!1 &3258397129254276132
 GameObject:
   m_ObjectHideFlags: 0

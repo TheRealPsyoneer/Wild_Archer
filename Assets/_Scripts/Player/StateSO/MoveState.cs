@@ -21,7 +21,12 @@ public class MoveState : StateNode
         float angle = Vector2.SignedAngle(Vector3.up, player.direction);
         player.skin.localRotation = Quaternion.Euler(0, -angle, 0);
 
-        if (player.speed < 0.1f)
+        if (player.currentTarget != null)
+        {
+            player.ChangeStateTo(State.Shot);
+        }
+
+        else if (player.speed < 0.1f)
         {
             player.ChangeStateTo(State.Idle);
         }

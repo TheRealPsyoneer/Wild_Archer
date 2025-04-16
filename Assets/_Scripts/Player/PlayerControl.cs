@@ -20,8 +20,11 @@ public class PlayerControl : MonoBehaviour, IStateUser
     public int skinIndex = 1;
     public CharacterController characterController { get; private set; }
     public EnemyControl currentTarget { get; private set; }
+    public ProjectileShooter shooter;
 
     const float GRAVITY_FORCE = 9.81f;
+
+    public bool isShooting;
 
     private void Awake()
     {
@@ -33,6 +36,7 @@ public class PlayerControl : MonoBehaviour, IStateUser
 
         animator = GetComponentInChildren<Animator>();
         characterController = GetComponent<CharacterController>();
+        shooter = GetComponent<ProjectileShooter>();
     }
 
     private void Start()

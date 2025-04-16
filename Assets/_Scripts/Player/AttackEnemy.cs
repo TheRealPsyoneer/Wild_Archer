@@ -30,7 +30,6 @@ public class AttackEnemy : MonoBehaviour
             }
         }
         player.SetTarget(target);
-        player.ChangeStateTo(State.Shot);
     }
 
     private void OnTriggerEnter(Collider other)

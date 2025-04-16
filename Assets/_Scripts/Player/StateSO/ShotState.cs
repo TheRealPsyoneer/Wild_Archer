@@ -12,14 +12,16 @@ public class ShotState : StateNode
 
     public override void Enter()
     {
-        Debug.Log("Enter Shot");
         player = user as PlayerControl;
+        player.isShooting = true;
         duration = shotAnimation.length;
 
         player.animator.SetLayerWeight(player.animator.GetLayerIndex("Up"), 0.5f);
         player.animator.SetBool("Shooting", true);
         player.animator.SetTrigger("Shot");
         initTime = Time.time;
+
+        player.shooter.Shoot(player.currentTarget);
     }
 
     public override void Execute()
@@ -29,15 +31,18 @@ public class ShotState : StateNode
             player.ChangeStateTo(State.Idle);
         }
 
-        player.SetDirection((player.currentTarget.transform.position - player.transform.position).normalized);
+        if (player.currentTarget != null)
+        {
+            Vector3 lookDirection = (player.currentTarget.transform.position - player.transform.position).normalized;
+            float angle = Vector2.SignedAngle(Vector2.up, new Vector2(lookDirection.x, lookDirection.z));
+            player.skin.localRotation = Quaternion.Euler(0, -angle, 0);
+        }
 
         player.animator.SetFloat("X", player.direction.x);
         player.animator.SetFloat("Z", player.direction.y);
         player.characterController.Move(new Vector3(player.direction.x, -1, player.direction.y) * Time.deltaTime * player.speed);
-        Debug.Log(player.speed);
         
-        float angle = Vector2.SignedAngle(Vector2.up, new Vector2(player.direction.x, player.direction.y));
-        player.skin.localRotation = Quaternion.Euler(0, -angle, 0);
+        
     }
 
     public override void Exit()
@@ -45,5 +50,7 @@ public class ShotState : StateNode
         player.animator.SetLayerWeight(player.animator.GetLayerIndex("Up"), 0);
         player.animator.SetBool("Shooting", false);
         player.SetTarget(null);
+        player.isShooting = false;
+
     }
 }
