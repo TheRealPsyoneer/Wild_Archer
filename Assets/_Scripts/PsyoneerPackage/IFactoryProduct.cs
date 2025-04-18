@@ -7,4 +7,5 @@ public interface IFactoryProduct
     public Stack<IFactoryProduct> pool { get; set; }
     public void Initialize();
     public void ReturnToPool();
+    public GameObject GetGameObject();
 }

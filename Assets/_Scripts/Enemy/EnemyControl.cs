@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System;
 
 public class EnemyControl : MonoBehaviour, IFactoryProduct
 {
     public Stack<IFactoryProduct> pool { get; set; }
     Rigidbody rb;
+    public event Action<EnemyControl> BeingKilledEvent;
 
     public void Initialize()
     {
@@ -17,6 +19,7 @@ public class EnemyControl : MonoBehaviour, IFactoryProduct
 
     private void OnDisable()
     {
+        BeingKilledEvent?.Invoke(this);
         ReturnToPool();
     }
 

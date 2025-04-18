@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2048094e5ce9c1b45b1d346fcc5afc8b, type: 3}
   m_Name: Arrow Factory
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  poolCapacity: 0
+  prefab: {fileID: 1936581124198818, guid: 25b2d933f6f848a46bab9c767d58aa8a, type: 3}
+  poolCapacity: 3

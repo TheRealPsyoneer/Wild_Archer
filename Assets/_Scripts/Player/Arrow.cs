@@ -2,23 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System;
 
 public class Arrow : MonoBehaviour, IFactoryProduct
 {
     [SerializeField] ArrowStats stats;
-    Rigidbody rb;
-    public PlayerControl player { get; set; }
     public float CurrentDamage { get; private set; }
-    public float CurrentFlyingTime { get; private set; }
+    public float CurrentSpeed { get; private set; }
     public Stack<IFactoryProduct> pool { get; set; }
     public EnemyControl enemy { get; set; }
+
+    public event Action<float, DamageReceiver> TargetHitEvent;
+
+    bool isSetUp;
 
     private void Awake()
     {
         CurrentDamage = stats.defaultDamage;
-        CurrentFlyingTime = stats.defaultFlyingTime;
+        CurrentSpeed = stats.defaultFlyingTime;
+        isSetUp = false;
 
-        rb = GetComponent<Rigidbody>();
+        TargetHitEvent += GetComponent<DamageDealer>().DealDamage;
     }
 
     public void Initialize()
@@ -26,22 +30,57 @@ public class Arrow : MonoBehaviour, IFactoryProduct
         gameObject.SetActive(true);
     }
 
-    public void Shooting()
+    public void SetUpArrow(EnemyControl target)
     {
-        Vector3 lookDirection = (player.currentTarget.transform.position - player.transform.position).normalized;
-        float angle = Vector2.SignedAngle(Vector2.up, new Vector2(lookDirection.x, lookDirection.z));
-        transform.rotation = Quaternion.Euler(0, -angle, 0);
+        enemy = target;
+        enemy.BeingKilledEvent += Deactivate;
 
-        rb.DOMove(enemy.transform.position, CurrentFlyingTime).OnComplete(() => gameObject.SetActive(false));
+        isSetUp = true;
+    }
+
+    private void Update()
+    {
+        if (!isSetUp) return;
+        FlyToTarget();
+    }
+
+    private void FlyToTarget()
+    {
+        Vector3 lookDirection = (enemy.transform.position - transform.position).normalized;
+
+        transform.LookAt(enemy.transform);
+
+        transform.Translate(Vector3.forward * Time.deltaTime * CurrentSpeed);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == enemy.gameObject)
+        {
+            DamageReceiver damageReceiver = other.GetComponent<DamageReceiver>();
+            TargetHitEvent?.Invoke(CurrentDamage, damageReceiver);
+            gameObject.SetActive(false);
+        }
+    }
+
+    void Deactivate(EnemyControl enemy)
+    {
+        gameObject.SetActive(false);
     }
 
     private void OnDisable()
     {
+        isSetUp = false;
         ReturnToPool();
     }
 
     public void ReturnToPool()
     {
         pool.Push(this);
+    }
+
+    public GameObject GetGameObject()
+    {
+        return gameObject;
     }
 }

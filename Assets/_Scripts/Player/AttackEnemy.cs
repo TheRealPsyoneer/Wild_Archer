@@ -32,6 +32,11 @@ public class AttackEnemy : MonoBehaviour
         player.SetTarget(target);
     }
 
+    void OnEnemyKilled(EnemyControl enemy)
+    {
+        enemies.Remove(enemy);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         EnemyControl enemy = other.GetComponent<EnemyControl>();
@@ -39,6 +44,7 @@ public class AttackEnemy : MonoBehaviour
         if (enemy != null && !enemies.Contains(enemy))
         {
             enemies.Add(enemy);
+            enemy.BeingKilledEvent += OnEnemyKilled;
         }
     }
 

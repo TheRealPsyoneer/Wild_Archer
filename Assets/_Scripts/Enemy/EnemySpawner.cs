@@ -47,8 +47,7 @@ public class EnemySpawner : MonoBehaviour
         {
             for (int i = 0; i < enemies.quantity; i++)
             {
-                EnemyControl instance = enemies.enemyFactory.GetProduct() as EnemyControl;
-                instance.GetGameObject().transform.position = spawnPosition + Vector3.up;
+                enemies.enemyFactory.GetProduct(spawnPosition + Vector3.up);
                 yield return new WaitForSeconds(0.5f);
             }
         }

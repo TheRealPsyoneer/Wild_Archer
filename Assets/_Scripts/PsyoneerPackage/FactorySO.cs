@@ -18,7 +18,7 @@ public class FactorySO : ScriptableObject
         }
     }
 
-    public IFactoryProduct GetProduct()
+    public IFactoryProduct GetProduct(Vector3 spawnPosition)
     {
         if (productsPool.Count == 0)
         {
@@ -26,6 +26,7 @@ public class FactorySO : ScriptableObject
         }
 
         IFactoryProduct instance = productsPool.Pop();
+        instance.GetGameObject().transform.position = spawnPosition;
         instance.Initialize();
         return instance;
     }

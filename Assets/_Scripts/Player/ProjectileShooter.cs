@@ -15,10 +15,7 @@ public class ProjectileShooter : MonoBehaviour
 
     public void Shoot(EnemyControl enemy)
     {
-        Arrow instance = projectileFactory.GetProduct() as Arrow;
-        instance.transform.position = player.transform.position;
-        instance.enemy = enemy;
-        instance.player = player;
-        instance.Shooting();
+        Arrow instance = projectileFactory.GetProduct(player.transform.position) as Arrow;
+        instance.SetUpArrow(enemy);
     }
 }

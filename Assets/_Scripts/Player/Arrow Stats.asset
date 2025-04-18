@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c72cd7bfaed0a4aa13af93c3433ed5, type: 3}
   m_Name: Arrow Stats
   m_EditorClassIdentifier: 
-  defaultDamage: 0
-  defaultSpeed: 0
+  defaultDamage: 1
+  defaultFlyingTime: 5
