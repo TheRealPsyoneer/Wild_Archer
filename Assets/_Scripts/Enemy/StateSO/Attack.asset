@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67ce2d8ad81a6754487af8cb951cc072, type: 3}
-  m_Name: Arrow Stats
+  m_Script: {fileID: 11500000, guid: f17db360c95d2564b85a3473bd511a25, type: 3}
+  m_Name: Attack
   m_EditorClassIdentifier: 
-  defaultSpeed: 20
-  defaultHealth: 0
-  defaultDamage: 1
+  state: 2
+  attackClip: {fileID: 7400000, guid: 202deadd66807cc40a7f2863bae2c66b, type: 2}

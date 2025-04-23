@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class DamageReceiver : MonoBehaviour
 {
-    float health = 3;
+    Health unitHealth;
+
+    private void Awake()
+    {
+        unitHealth = GetComponent<Health>();
+    }
 
     public void TakeDamage(float value)
     {
-        health -= value;
-        if (health <= 0)
-        {
-            gameObject.SetActive(false);
-        }
+        unitHealth.ChangeHealth(-value);
     }
 }

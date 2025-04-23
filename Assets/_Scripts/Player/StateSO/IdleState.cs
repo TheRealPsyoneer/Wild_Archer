@@ -15,12 +15,12 @@ public class IdleState : StateNode
     {
         if (player.currentTarget != null)
         {
-            player.ChangeStateTo(State.Shot);
+            player.ChangeStateTo(State.Shot_Attack);
         }
 
         else if (player.speed > 0)
         {
-            player.ChangeStateTo(State.Move);
+            player.ChangeStateTo(State.Move_Run);
         }
 
         

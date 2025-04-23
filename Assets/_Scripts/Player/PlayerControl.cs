@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControl : MonoBehaviour, IStateUser
+public class PlayerControl : UnitControl, IStateUser
 {
     public static PlayerControl instance;
     public IStateUser user { get => this; }
 
-    public PlayerStats stats;
+    public PlayerStats playerStats;
 
     public float speed { get; private set; }
     public Vector2 direction { get; private set; }
@@ -20,7 +20,9 @@ public class PlayerControl : MonoBehaviour, IStateUser
     public int skinIndex = 1;
     public CharacterController characterController { get; private set; }
     public EnemyControl currentTarget { get; private set; }
-    public ProjectileShooter shooter;
+    public ProjectileShooter shooter { get; private set; }
+
+    public Vector3 shootPositionOffset;
 
     const float GRAVITY_FORCE = 9.81f;
 
@@ -62,7 +64,7 @@ public class PlayerControl : MonoBehaviour, IStateUser
 
     public void UpdateSpeed()
     {
-        speed = stats.speed;
+        speed = unitStats.defaultSpeed;
         animator.SetFloat("Speed", speed);
     }
 

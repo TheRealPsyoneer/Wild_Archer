@@ -11,7 +11,7 @@ public class AttackEnemy : MonoBehaviour
 
     private void Update()
     {
-        if (enemies.Count == 0 || player.GetCurrentState() == State.Shot) return;
+        if (enemies.Count == 0 || player.GetCurrentState() == State.Shot_Attack) return;
 
         StartAttack();
     }

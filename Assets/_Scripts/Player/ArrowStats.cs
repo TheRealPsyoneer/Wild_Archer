@@ -6,5 +6,5 @@ using UnityEngine;
 public class ArrowStats : ScriptableObject
 {
     public float defaultDamage;
-    public float defaultFlyingTime;
+    public float defaultSpeed;
 }

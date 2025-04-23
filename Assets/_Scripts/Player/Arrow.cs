@@ -4,9 +4,8 @@ using UnityEngine;
 using DG.Tweening;
 using System;
 
-public class Arrow : MonoBehaviour, IFactoryProduct
+public class Arrow : UnitControl, IFactoryProduct
 {
-    [SerializeField] ArrowStats stats;
     public float CurrentDamage { get; private set; }
     public float CurrentSpeed { get; private set; }
     public Stack<IFactoryProduct> pool { get; set; }
@@ -18,8 +17,8 @@ public class Arrow : MonoBehaviour, IFactoryProduct
 
     private void Awake()
     {
-        CurrentDamage = stats.defaultDamage;
-        CurrentSpeed = stats.defaultFlyingTime;
+        CurrentDamage = unitStats.defaultDamage;
+        CurrentSpeed = unitStats.defaultSpeed;
         isSetUp = false;
 
         TargetHitEvent += GetComponent<DamageDealer>().DealDamage;
@@ -48,7 +47,7 @@ public class Arrow : MonoBehaviour, IFactoryProduct
     {
         Vector3 lookDirection = (enemy.transform.position - transform.position).normalized;
 
-        transform.LookAt(enemy.transform);
+        transform.LookAt(enemy.transform.position + enemy.shootHitOffset);
 
         transform.Translate(Vector3.forward * Time.deltaTime * CurrentSpeed);
     }

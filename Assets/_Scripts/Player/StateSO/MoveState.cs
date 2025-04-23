@@ -23,7 +23,7 @@ public class MoveState : StateNode
 
         if (player.currentTarget != null)
         {
-            player.ChangeStateTo(State.Shot);
+            player.ChangeStateTo(State.Shot_Attack);
         }
 
         else if (player.speed < 0.1f)
