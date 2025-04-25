@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class DamageReceiver : MonoBehaviour
 {
     Health unitHealth;
+
+    public event Action UnitGotHit;
 
     private void Awake()
     {
@@ -14,5 +17,6 @@ public class DamageReceiver : MonoBehaviour
     public void TakeDamage(float value)
     {
         unitHealth.ChangeHealth(-value);
+        UnitGotHit?.Invoke();
     }
 }

@@ -9,5 +9,5 @@ public class GlobalEnum : MonoBehaviour
 
 public enum State
 {
-    Idle, Move_Run, Shot_Attack
+    Idle, Move_Run, Shot_Attack, GetHit, Death
 }

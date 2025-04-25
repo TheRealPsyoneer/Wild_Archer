@@ -19,7 +19,7 @@ public class EnemyAttackStateSO : StateNode
 
         Vector3 lookDirection = new Vector3(PlayerControl.instance.transform.position.x, 0, PlayerControl.instance.transform.position.z);
 
-        owner.transform.LookAt(lookDirection);
+        owner.model.LookAt(lookDirection);
 
         initTime = Time.time;
         duration = attackClip.length;

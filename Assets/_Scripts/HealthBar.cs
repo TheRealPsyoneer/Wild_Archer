@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     [SerializeField] Health unitHealth;
-    [SerializeField] Slider currentHealthSlider;
+    [SerializeField] protected Slider currentHealthSlider;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         currentHealthSlider.maxValue = unitHealth.unit.unitStats.defaultHealth;
         currentHealthSlider.value = currentHealthSlider.maxValue;
@@ -16,7 +16,7 @@ public class HealthBar : MonoBehaviour
         unitHealth.HealthChanged += UpdateHealthUI;
     }
 
-    void UpdateHealthUI()
+    protected void UpdateHealthUI()
     {
         currentHealthSlider.value = unitHealth.CurrentHealth;
     }

@@ -19,12 +19,23 @@ public class EnemyControl : UnitControl, IFactoryProduct, IStateUser
 
     public Animator animator { get; private set; }
 
+    public Transform model;
+
     StateMachine stateMachine;
+    DamageReceiver damageReceiver;
+
+    Health health;
+    public float CurrentHealth => health.CurrentHealth;
+
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
+        damageReceiver = GetComponent<DamageReceiver>();
+        health = GetComponent<Health>();
+
+        damageReceiver.UnitGotHit += OnGettingHit;
 
         CurrentSpeed = unitStats.defaultSpeed;
 
@@ -34,6 +45,14 @@ public class EnemyControl : UnitControl, IFactoryProduct, IStateUser
         }
 
         stateMachine = new(stateStorage[State.Move_Run], user);
+    }
+
+    void OnGettingHit()
+    {
+        if (stateMachine.currentState.state != State.GetHit || stateMachine.currentState.state != State.Death)
+        {
+            ChangeStateTo(State.GetHit);
+        }
     }
 
 

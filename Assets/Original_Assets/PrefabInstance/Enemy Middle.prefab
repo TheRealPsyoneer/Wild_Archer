@@ -13015,6 +13015,9 @@ MonoBehaviour:
   stateList:
   - {fileID: 11400000, guid: ee8b758da4c93144e9a1b9f4ba36bc70, type: 2}
   - {fileID: 11400000, guid: 7ff9c7a8c121e9849bfe244e43d767bc, type: 2}
+  - {fileID: 11400000, guid: 60919733c2b7ea84c8301a0fb486be35, type: 2}
+  - {fileID: 11400000, guid: dbeaacadd8eb4cb4aac33f6debb59e8b, type: 2}
+  model: {fileID: 4245888802017879}
 --- !u!114 &4669133944331036269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13146,6 +13149,7 @@ GameObject:
   - component: {fileID: 223846566550108989}
   - component: {fileID: 114989638951540091}
   - component: {fileID: 114518380236301398}
+  - component: {fileID: 4960489313672914169}
   m_Layer: 7
   m_Name: HealthBar (1)
   m_TagString: Untagged
@@ -13237,6 +13241,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4087
+--- !u!114 &4960489313672914169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369972846322336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19aefd5beb5fba4c84eb5204cb335e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitHealth: {fileID: 6954350022399794776}
+  currentHealthSlider: {fileID: 114360222304659325}
+  showUITime: 0.5
 --- !u!1 &1382240482905701
 GameObject:
   m_ObjectHideFlags: 0
