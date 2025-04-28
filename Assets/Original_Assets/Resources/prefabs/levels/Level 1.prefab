@@ -247400,7 +247400,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4892875528221976
 Transform:
@@ -760717,9 +760717,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4153137822806138}
     m_Modifications:
+    - target: {fileID: 1909605154178637194, guid: e9ce453975ac81b4a962d1aa5400db49, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1910035819834364138, guid: e9ce453975ac81b4a962d1aa5400db49, type: 3}
       propertyPath: m_Name
       value: Stair
+      objectReference: {fileID: 0}
+    - target: {fileID: 1910433561786643580, guid: e9ce453975ac81b4a962d1aa5400db49, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1912080888658193667, guid: e9ce453975ac81b4a962d1aa5400db49, type: 3}
       propertyPath: m_RootOrder
@@ -760779,6 +760787,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4829496172591147}
     m_Modifications:
+    - target: {fileID: 3231621244901936480, guid: 6a2b5a3d985d3924eab4b2ad2a684704, type: 3}
+      propertyPath: m_AABB.m_Center.x
+      value: 0.024133325
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231621244901936480, guid: 6a2b5a3d985d3924eab4b2ad2a684704, type: 3}
+      propertyPath: m_AABB.m_Center.y
+      value: 0.103271246
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231621244901936480, guid: 6a2b5a3d985d3924eab4b2ad2a684704, type: 3}
+      propertyPath: m_AABB.m_Center.z
+      value: -0.029970944
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231621244901936480, guid: 6a2b5a3d985d3924eab4b2ad2a684704, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 0.4987173
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231621244901936480, guid: 6a2b5a3d985d3924eab4b2ad2a684704, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 0.5056286
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231621244901936480, guid: 6a2b5a3d985d3924eab4b2ad2a684704, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.31057742
+      objectReference: {fileID: 0}
     - target: {fileID: 3256396923159486701, guid: 6a2b5a3d985d3924eab4b2ad2a684704, type: 3}
       propertyPath: m_RootOrder
       value: 1

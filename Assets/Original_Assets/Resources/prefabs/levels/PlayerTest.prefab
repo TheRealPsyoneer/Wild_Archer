@@ -5840,9 +5840,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 445d9ba009cb4384d8de7b38fdcd7242, type: 2}
   - {fileID: 11400000, guid: c3237cb0d3cbf2b4284eea25559e046d, type: 2}
   - {fileID: 11400000, guid: d7339f6323285ae4492fcc36bb067b5e, type: 2}
+  - {fileID: 11400000, guid: b780c8246eead4547919260fb1267032, type: 2}
   skinIndex: 1
   shootPositionOffset: {x: 0, y: 0.75, z: 0}
   isShooting: 0
+  playerHeath: {fileID: -369043685195024279}
 --- !u!114 &5565229821720469028
 MonoBehaviour:
   m_ObjectHideFlags: 0

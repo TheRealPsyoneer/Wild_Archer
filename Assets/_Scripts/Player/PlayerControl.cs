@@ -21,6 +21,7 @@ public class PlayerControl : UnitControl, IStateUser
     public CharacterController characterController { get; private set; }
     public EnemyControl currentTarget { get; private set; }
     public ProjectileShooter shooter { get; private set; }
+    public Health playerHeath { get; private set; }
 
     public Vector3 shootPositionOffset;
 
@@ -28,17 +29,22 @@ public class PlayerControl : UnitControl, IStateUser
 
     public bool isShooting;
 
+    
+
     private void Awake()
     {
         instance = this;
         for (int i=0; i < stateList.Count; i++)
         {
-            stateStorage[stateList[i].state] = stateList[i];
+            stateStorage[stateList[i].state] = Instantiate(stateList[i]);
         }
 
         animator = GetComponentInChildren<Animator>();
         characterController = GetComponent<CharacterController>();
         shooter = GetComponent<ProjectileShooter>();
+        playerHeath = GetComponent<Health>();
+
+        playerHeath.HealthChanged += CheckHealth;
     }
 
     private void Start()
@@ -62,9 +68,9 @@ public class PlayerControl : UnitControl, IStateUser
         return stateMachine.currentState.state;
     }
 
-    public void UpdateSpeed()
+    public void UpdateSpeed(float ratio)
     {
-        speed = unitStats.defaultSpeed;
+        speed = unitStats.defaultSpeed * ratio;
         animator.SetFloat("Speed", speed);
     }
 
@@ -82,5 +88,13 @@ public class PlayerControl : UnitControl, IStateUser
     public void SetTarget(EnemyControl enemy)
     {
         currentTarget = enemy;
+    }
+
+    void CheckHealth()
+    {
+        if (playerHeath.CurrentHealth <= 0)
+        {
+            ChangeStateTo(State.Death);
+        }
     }
 }

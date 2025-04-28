@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using System;
+using UnityEngine.AI;
 
 public class EnemyControl : UnitControl, IFactoryProduct, IStateUser
 {
@@ -27,6 +28,7 @@ public class EnemyControl : UnitControl, IFactoryProduct, IStateUser
     Health health;
     public float CurrentHealth => health.CurrentHealth;
 
+    public NavMeshAgent nav { get; private set; }
 
     private void Awake()
     {
@@ -34,6 +36,7 @@ public class EnemyControl : UnitControl, IFactoryProduct, IStateUser
         animator = GetComponentInChildren<Animator>();
         damageReceiver = GetComponent<DamageReceiver>();
         health = GetComponent<Health>();
+        nav = GetComponent<NavMeshAgent>();
 
         damageReceiver.UnitGotHit += OnGettingHit;
 
@@ -44,7 +47,12 @@ public class EnemyControl : UnitControl, IFactoryProduct, IStateUser
             stateStorage[stateList[i].state] = Instantiate(stateList[i]);
         }
 
+    }
+
+    private void Start()
+    {
         stateMachine = new(stateStorage[State.Move_Run], user);
+
     }
 
     void OnGettingHit()

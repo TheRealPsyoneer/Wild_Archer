@@ -7,6 +7,9 @@ public class PlayerMoveButton : MonoBehaviour, IPointerDownHandler, IDragHandler
 {
     Vector2 startPoint;
     Vector2 direction;
+
+    [SerializeField] float maxSpeedDragRange;
+
     PlayerControl PlayerControl => PlayerControl.instance;
 
 
@@ -18,12 +21,18 @@ public class PlayerMoveButton : MonoBehaviour, IPointerDownHandler, IDragHandler
     public void OnBeginDrag(PointerEventData eventData)
     {
         startPoint = eventData.pressPosition;
-        PlayerControl.UpdateSpeed();
+        
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         PlayerControl.SetDirection((eventData.position - startPoint).normalized);
+        float dragRange = (eventData.position - startPoint).magnitude;
+
+        float dragRatio = dragRange / maxSpeedDragRange;
+        dragRatio = Mathf.Clamp(dragRatio, 0, 1);
+
+        PlayerControl.UpdateSpeed(dragRatio);
     }
 
     public void OnEndDrag(PointerEventData eventData)
