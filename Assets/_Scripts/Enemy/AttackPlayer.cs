@@ -16,7 +16,7 @@ public class AttackPlayer : MonoBehaviour
 
     private void Update()
     {
-        if (owner.GetCurrentState() == State.Shot_Attack) return;
+        if (owner.GetCurrentState() == State.Shot_Attack || owner.GetCurrentState() == State.GetHit) return;
 
         if (!isPlayerInRange) return;
 

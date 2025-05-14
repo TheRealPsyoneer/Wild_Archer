@@ -16,10 +16,13 @@ public class MoveState : StateNode
     {
         player.animator.SetFloat("X", player.direction.x);
         player.animator.SetFloat("Z", player.direction.y);
-        player.characterController.Move(new Vector3(player.direction.x, -1, player.direction.y) * Time.deltaTime * player.speed);
+        player.navMeshAgent.Move(new Vector3(player.direction.x, 0, player.direction.y) * Time.deltaTime * player.speed);
 
         float angle = Vector2.SignedAngle(Vector3.up, player.direction);
+
         player.skin.localRotation = Quaternion.Euler(0, -angle, 0);
+        //player.skin.localRotation = Quaternion.Slerp(player.transform.rotation, Quaternion.Euler(0, -angle, 0), Time.deltaTime);
+
 
         if (player.currentTarget != null)
         {

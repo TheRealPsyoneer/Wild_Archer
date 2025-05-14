@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerControl : UnitControl, IStateUser
 {
@@ -25,6 +26,8 @@ public class PlayerControl : UnitControl, IStateUser
 
     public Vector3 shootPositionOffset;
 
+    public NavMeshAgent navMeshAgent { get; private set; }
+
     const float GRAVITY_FORCE = 9.81f;
 
     public bool isShooting;
@@ -43,6 +46,7 @@ public class PlayerControl : UnitControl, IStateUser
         characterController = GetComponent<CharacterController>();
         shooter = GetComponent<ProjectileShooter>();
         playerHeath = GetComponent<Health>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
 
         playerHeath.HealthChanged += CheckHealth;
     }

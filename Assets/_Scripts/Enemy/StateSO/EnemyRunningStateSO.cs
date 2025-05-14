@@ -10,26 +10,21 @@ public class EnemyRunningStateSO : StateNode
     public override void Enter()
     {
         owner = user as EnemyControl;
-
-        Debug.Log(PlayerControl.instance == null);
-        owner.nav.SetDestination(PlayerControl.instance.transform.position);
     }
 
     public override void Execute()
     {
-        Vector3 lookTarget = new Vector3(PlayerControl.instance.transform.position.x, 0, PlayerControl.instance.transform.position.z);
-
-        owner.model.LookAt(lookTarget);
+        //Vector3 lookTarget = new Vector3(PlayerControl.instance.transform.position.x, 0, PlayerControl.instance.transform.position.z);
 
         //Vector3 direction = (lookTarget - owner.transform.position).normalized;
 
-        //owner.transform.Translate((direction) * Time.deltaTime * owner.CurrentSpeed);
+        //owner.nav.SetDestination((direction) * Time.deltaTime * owner.CurrentSpeed);
 
-        
+        owner.nav.SetDestination(PlayerControl.instance.transform.position);
     }
 
     public override void Exit()
     {
-        
+        owner.nav.ResetPath();
     }
 }

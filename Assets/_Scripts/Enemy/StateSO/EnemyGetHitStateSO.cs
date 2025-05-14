@@ -7,26 +7,29 @@ public class EnemyGetHitStateSO : StateNode
 {
     EnemyControl owner;
 
-    [SerializeField] AnimationClip getHitClip;
-
     float initTime;
     float duration;
+
+    bool isDead;
 
     public override void Enter()
     {
         owner = user as EnemyControl;
 
         owner.animator.SetTrigger("GetHit");
+        owner.animator.Update(0);
 
         initTime = Time.time;
-        duration = getHitClip.length * 0.4f;
+        duration = owner.animator.GetNextAnimatorStateInfo(0).length;
+
+        isDead = owner.CurrentHealth <= 0 ? true : false;
     }
 
     public override void Execute()
     {
         if (Time.time - initTime >= duration)
         {
-            if (owner.CurrentHealth <= 0)
+            if (isDead)
             {
                 owner.ChangeStateTo(State.Death);
             }

@@ -40,7 +40,7 @@ public class ShotState : StateNode
 
         player.animator.SetFloat("X", player.direction.x);
         player.animator.SetFloat("Z", player.direction.y);
-        player.characterController.Move(new Vector3(player.direction.x, -1, player.direction.y) * Time.deltaTime * player.speed);
+        player.navMeshAgent.Move(new Vector3(player.direction.x, -1, player.direction.y) * Time.deltaTime * player.speed);
         
         
     }

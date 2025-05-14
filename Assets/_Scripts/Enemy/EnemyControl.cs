@@ -57,11 +57,13 @@ public class EnemyControl : UnitControl, IFactoryProduct, IStateUser
 
     void OnGettingHit()
     {
-        if (stateMachine.currentState.state != State.GetHit || stateMachine.currentState.state != State.Death)
+        if (stateMachine.currentState.state != State.GetHit && stateMachine.currentState.state != State.Death)
         {
             ChangeStateTo(State.GetHit);
         }
     }
+
+    
 
 
     public void Initialize()
@@ -78,6 +80,7 @@ public class EnemyControl : UnitControl, IFactoryProduct, IStateUser
     {
         stateMachine.TransitionTo(stateStorage[state]);
     }
+
     public State GetCurrentState()
     {
         return stateMachine.currentState.state;

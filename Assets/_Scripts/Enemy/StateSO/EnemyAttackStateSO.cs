@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.UI.GridLayoutGroup;
+using DG.Tweening;
 
 [CreateAssetMenu(fileName = "Attack", menuName = "Enemy/States SO/Attack State SO")]
 public class EnemyAttackStateSO : StateNode
@@ -16,14 +16,14 @@ public class EnemyAttackStateSO : StateNode
     public override void Enter()
     {
         owner = user as EnemyControl;
-
-        Vector3 lookDirection = new Vector3(PlayerControl.instance.transform.position.x, 0, PlayerControl.instance.transform.position.z);
-
-        owner.model.LookAt(lookDirection);
+        MakeOwnerFaceTarget();
 
         initTime = Time.time;
-        duration = attackClip.length;
+
         owner.animator.SetTrigger("Hit");
+        owner.animator.Update(0);
+
+        duration = owner.animator.GetNextAnimatorStateInfo(0).length;
     }
 
     public override void Execute()
@@ -37,5 +37,19 @@ public class EnemyAttackStateSO : StateNode
     public override void Exit()
     {
         
+    }
+
+    private void MakeOwnerFaceTarget()
+    {
+        Vector2 ownerNormalizedPosition = new Vector2(owner.transform.position.x, owner.transform.position.z);
+        Vector2 playerNormalizedPosition = new Vector2(PlayerControl.instance.transform.position.x, PlayerControl.instance.transform.position.z);
+
+        Vector2 lookDirection = playerNormalizedPosition - ownerNormalizedPosition;
+
+        float turningAngle = Vector2.SignedAngle(lookDirection, Vector2.up);
+
+        owner.transform.DORotate(new Vector3(0, turningAngle, 0), 0.2f);
+
+        //owner.transform.rotation = Quaternion.Euler(new Vector3(0, turningAngle, 0));
     }
 }

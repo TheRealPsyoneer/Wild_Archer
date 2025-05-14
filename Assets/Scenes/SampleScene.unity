@@ -121,7 +121,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: e1e464692734fc34ea15991e7cc39582, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 13bb7127102fe014cbe8a2112833153c, type: 2}
 --- !u!1 &223776812
 GameObject:
   m_ObjectHideFlags: 0
@@ -1383,13 +1383,57 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1058026753609886, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1301722490597641, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1417117752993655, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535480603998610, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1569303510237614, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591732564796054, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679192971048136, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679800967726325, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1843567699908196, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878828402665317, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1907621440273029, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1930526757843038, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
       propertyPath: m_Name
       value: Level 1
       objectReference: {fileID: 0}
     - target: {fileID: 1930526757843038, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4829496172591147, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
       propertyPath: m_RootOrder
@@ -1437,11 +1481,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224966846391412397, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.587
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224966846391412397, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
