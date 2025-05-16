@@ -13,38 +13,37 @@ public class Arrow : UnitControl, IFactoryProduct
 
     public event Action<float, DamageReceiver> TargetHitEvent;
 
-    bool isSetUp;
-
     private void Awake()
     {
-        CurrentDamage = unitStats.defaultDamage;
         CurrentSpeed = unitStats.defaultSpeed;
-        isSetUp = false;
 
         TargetHitEvent += GetComponent<DamageDealer>().DealDamage;
     }
 
     public void Initialize()
     {
+        CurrentDamage = PlayerControl.instance.CurrentDamage;
         gameObject.SetActive(true);
     }
 
     public void SetUpArrow(EnemyControl target)
     {
         enemy = target;
-        enemy.BeingKilledEvent += Deactivate;
-
-        isSetUp = true;
     }
 
     private void Update()
     {
-        if (!isSetUp) return;
         FlyToTarget();
     }
 
     private void FlyToTarget()
     {
+        if (enemy == null)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+
         Vector3 lookDirection = (enemy.transform.position - transform.position).normalized;
 
         transform.LookAt(enemy.transform.position + enemy.shootHitOffset);
@@ -62,14 +61,8 @@ public class Arrow : UnitControl, IFactoryProduct
         }
     }
 
-    void Deactivate(EnemyControl enemy)
-    {
-        gameObject.SetActive(false);
-    }
-
     private void OnDisable()
     {
-        isSetUp = false;
         ReturnToPool();
     }
 

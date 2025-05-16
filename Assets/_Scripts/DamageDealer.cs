@@ -8,7 +8,7 @@ public class DamageDealer : MonoBehaviour
 
     private void Awake()
     {
-        unit = GetComponent<UnitControl>();
+        unit = GetComponentInParent<UnitControl>();
     }
 
     public void DealDamage(float value, DamageReceiver target)

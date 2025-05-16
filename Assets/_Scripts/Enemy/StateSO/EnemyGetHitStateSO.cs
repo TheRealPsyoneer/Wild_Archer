@@ -19,8 +19,10 @@ public class EnemyGetHitStateSO : StateNode
         owner.animator.SetTrigger("GetHit");
         owner.animator.Update(0);
 
+        owner.ShowBloodVFX();
+
         initTime = Time.time;
-        duration = owner.animator.GetNextAnimatorStateInfo(0).length;
+        duration = owner.animator.GetNextAnimatorStateInfo(0).length * 0.75f;
 
         isDead = owner.CurrentHealth <= 0 ? true : false;
     }

@@ -11,6 +11,7 @@ public class PlayerControl : UnitControl, IStateUser
     public PlayerStats playerStats;
 
     public float speed { get; private set; }
+    public float CurrentDamage { get; private set; }
     public Vector2 direction { get; private set; }
     [SerializeField] List<StateNode> stateList;
     public Dictionary<State, StateNode> stateStorage = new();
@@ -23,6 +24,7 @@ public class PlayerControl : UnitControl, IStateUser
     public EnemyControl currentTarget { get; private set; }
     public ProjectileShooter shooter { get; private set; }
     public Health playerHeath { get; private set; }
+    public DamageReceiver damageReceiver { get; private set; }
 
     public Vector3 shootPositionOffset;
 
@@ -46,9 +48,11 @@ public class PlayerControl : UnitControl, IStateUser
         characterController = GetComponent<CharacterController>();
         shooter = GetComponent<ProjectileShooter>();
         playerHeath = GetComponent<Health>();
+        damageReceiver = GetComponent<DamageReceiver>();
         navMeshAgent = GetComponent<NavMeshAgent>();
 
         playerHeath.HealthChanged += CheckHealth;
+        CurrentDamage = unitStats.defaultDamage;
     }
 
     private void Start()
@@ -100,5 +104,10 @@ public class PlayerControl : UnitControl, IStateUser
         {
             ChangeStateTo(State.Death);
         }
+    }
+
+    public void TakeDamage(float value)
+    {
+        damageReceiver.TakeDamage(value);
     }
 }

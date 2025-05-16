@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultSpeed: 5
   defaultHealth: 50
-  defaultDamage: 0
+  defaultDamage: 1

@@ -25,6 +25,9 @@ public class EnemyRunningStateSO : StateNode
 
     public override void Exit()
     {
-        owner.nav.ResetPath();
+        if (owner.nav.hasPath)
+        {
+            owner.nav.ResetPath();
+        }
     }
 }

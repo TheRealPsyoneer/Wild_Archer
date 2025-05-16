@@ -7,6 +7,8 @@ using UnityEngine.AI;
 
 public class EnemyControl : UnitControl, IFactoryProduct, IStateUser
 {
+    [SerializeField] ParticleSystem bloodVFX;
+
     public IStateUser user => this;
     public Stack<IFactoryProduct> pool { get; set; }
     public Rigidbody rb { get; private set; }
@@ -14,6 +16,7 @@ public class EnemyControl : UnitControl, IFactoryProduct, IStateUser
     public Vector3 shootHitOffset;
 
     public float CurrentSpeed;
+    public float CurrentDamage;
 
     [SerializeField] List<StateNode> stateList;
     public Dictionary<State, StateNode> stateStorage = new();
@@ -40,19 +43,14 @@ public class EnemyControl : UnitControl, IFactoryProduct, IStateUser
 
         damageReceiver.UnitGotHit += OnGettingHit;
 
-        CurrentSpeed = unitStats.defaultSpeed;
+        
 
         for (int i = 0; i < stateList.Count; i++)
         {
             stateStorage[stateList[i].state] = Instantiate(stateList[i]);
         }
 
-    }
-
-    private void Start()
-    {
         stateMachine = new(stateStorage[State.Move_Run], user);
-
     }
 
     void OnGettingHit()
@@ -63,11 +61,13 @@ public class EnemyControl : UnitControl, IFactoryProduct, IStateUser
         }
     }
 
-    
-
-
     public void Initialize()
     {
+        CurrentSpeed = unitStats.defaultSpeed;
+        CurrentDamage = unitStats.defaultDamage;
+
+        health.ChangeHealth(unitStats.defaultHealth);
+        ChangeStateTo(State.Move_Run);
         gameObject.SetActive(true);
     }
 
@@ -100,5 +100,10 @@ public class EnemyControl : UnitControl, IFactoryProduct, IStateUser
     public GameObject GetGameObject()
     {
         return gameObject;
+    }
+
+    public void ShowBloodVFX()
+    {
+        bloodVFX.Play();
     }
 }

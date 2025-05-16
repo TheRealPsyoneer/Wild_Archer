@@ -38,4 +38,17 @@ public class AttackPlayer : MonoBehaviour
             isPlayerInRange = false;
         }
     }
+
+    private void OnDisable()
+    {
+        isPlayerInRange = false;
+    }
+
+    public void DealDamageToPlayer()
+    {
+        if (isPlayerInRange)
+        {
+            PlayerControl.instance.TakeDamage(owner.CurrentDamage);
+        }
+    }
 }
