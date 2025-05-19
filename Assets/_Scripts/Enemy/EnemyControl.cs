@@ -23,8 +23,6 @@ public class EnemyControl : UnitControl, IFactoryProduct, IStateUser
 
     public Animator animator { get; private set; }
 
-    public Transform model;
-
     StateMachine stateMachine;
     DamageReceiver damageReceiver;
 

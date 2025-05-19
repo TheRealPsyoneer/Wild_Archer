@@ -38,7 +38,7 @@ public class Arrow : UnitControl, IFactoryProduct
 
     private void FlyToTarget()
     {
-        if (enemy == null)
+        if (!enemy.enabled)
         {
             gameObject.SetActive(false);
             return;

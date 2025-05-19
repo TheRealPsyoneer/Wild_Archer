@@ -17,6 +17,11 @@ public class HealthBarEnemy : HealthBar
         damageReceiver.UnitGotHit += ShowHealthBarUI;
     }
 
+    private void LateUpdate()
+    {
+        transform.rotation = Quaternion.identity;
+    }
+
     void ShowHealthBarUI()
     {
 
@@ -32,6 +37,11 @@ public class HealthBarEnemy : HealthBar
     IEnumerator TurnOffUI()
     {
         yield return new WaitForSeconds(showUITime);
+        currentHealthSlider.gameObject.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
         currentHealthSlider.gameObject.SetActive(false);
     }
 }
