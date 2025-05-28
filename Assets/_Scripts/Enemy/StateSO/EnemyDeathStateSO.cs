@@ -12,6 +12,8 @@ public class EnemyDeathStateSO : StateNode
     {
         owner = user as EnemyControl;
 
+        CollectiblesSpawner.Instance.SpawnCoin(owner.transform.position);
+
         owner.gameObject.SetActive(false);
     }
 

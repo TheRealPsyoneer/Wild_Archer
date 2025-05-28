@@ -13033,7 +13033,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7ff9c7a8c121e9849bfe244e43d767bc, type: 2}
   - {fileID: 11400000, guid: 60919733c2b7ea84c8301a0fb486be35, type: 2}
   - {fileID: 11400000, guid: dbeaacadd8eb4cb4aac33f6debb59e8b, type: 2}
-  model: {fileID: 4245888802017879}
+  coinFactory: {fileID: 11400000, guid: 4b51e35db18bf3f44926059673fa6e71, type: 2}
 --- !u!114 &4669133944331036269
 MonoBehaviour:
   m_ObjectHideFlags: 0

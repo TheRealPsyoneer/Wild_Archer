@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Enemy Middle
   m_EditorClassIdentifier: 
   defaultSpeed: 5
-  defaultHealth: 5
+  defaultHealth: 1
   defaultDamage: 2

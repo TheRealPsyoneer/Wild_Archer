@@ -1181,6 +1181,7 @@ GameObject:
   - component: {fileID: 1782852917}
   - component: {fileID: 1782852916}
   - component: {fileID: 1782852918}
+  - component: {fileID: 1782852919}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1241,6 +1242,19 @@ MonoBehaviour:
   areaLevels:
   - waves:
     - {fileID: 11400000, guid: 0d6c7225891d35c49bdd571e91c80be3, type: 2}
+--- !u!114 &1782852919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782852915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fba92e3481804d448bbbc6c7cdd2af2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinFactory: {fileID: 11400000, guid: 4b51e35db18bf3f44926059673fa6e71, type: 2}
 --- !u!1 &2072437492
 GameObject:
   m_ObjectHideFlags: 0

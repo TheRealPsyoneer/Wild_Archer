@@ -14,11 +14,14 @@ public class ShotState : StateNode
     {
         player = user as PlayerControl;
         player.isShooting = true;
-        duration = shotAnimation.length;
+        
 
         player.animator.SetLayerWeight(player.animator.GetLayerIndex("Up"), 0.5f);
         player.animator.SetBool("Shooting", true);
         player.animator.SetTrigger("Shot");
+        player.animator.Update(0);
+
+        duration = player.animator.GetCurrentAnimatorStateInfo(1).length;
         initTime = Time.time;
 
         player.shooter.Shoot(player.currentTarget);
@@ -38,8 +41,8 @@ public class ShotState : StateNode
             player.skin.localRotation = Quaternion.Euler(0, -angle, 0);
         }
 
-        //player.animator.SetFloat("X", player.direction.x);
-        //player.animator.SetFloat("Z", player.direction.y);
+        player.animator.SetFloat("X", player.direction.x);
+        player.animator.SetFloat("Z", player.direction.y);
         player.navMeshAgent.Move(new Vector3(player.direction.x, -1, player.direction.y) * Time.deltaTime * player.speed);
         
         

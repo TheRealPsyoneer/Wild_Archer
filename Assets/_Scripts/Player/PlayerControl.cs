@@ -27,6 +27,7 @@ public class PlayerControl : UnitControl, IStateUser
     public DamageReceiver damageReceiver { get; private set; }
 
     public Vector3 shootPositionOffset;
+    public ParticleSystem coinVFX;
 
     public NavMeshAgent navMeshAgent { get; private set; }
 
@@ -34,6 +35,7 @@ public class PlayerControl : UnitControl, IStateUser
 
     public bool isShooting;
 
+    public int currentMoney { get; private set; }
     
 
     private void Awake()
@@ -53,6 +55,10 @@ public class PlayerControl : UnitControl, IStateUser
 
         playerHeath.HealthChanged += CheckHealth;
         CurrentDamage = unitStats.defaultDamage;
+
+        //
+        currentMoney = 3;
+        //
     }
 
     private void Start()
@@ -109,5 +115,20 @@ public class PlayerControl : UnitControl, IStateUser
     public void TakeDamage(float value)
     {
         damageReceiver.TakeDamage(value);
+    }
+
+    public void ChangeMoney(int value)
+    {
+        currentMoney += value;
+    }
+
+    public void ChangeMoneyVisual(int value)
+    {
+
+    }
+
+    public void PlayCoinVFX()
+    {
+        coinVFX.Play();
     }
 }

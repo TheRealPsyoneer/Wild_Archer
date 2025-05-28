@@ -38,5 +38,6 @@ public class PlayerMoveButton : MonoBehaviour, IPointerDownHandler, IDragHandler
     public void OnEndDrag(PointerEventData eventData)
     {
         PlayerControl.ResetSpeed();
+        PlayerControl.SetDirection(Vector3.zero);
     }
 }

@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67ce2d8ad81a6754487af8cb951cc072, type: 3}
-  m_Name: Enemy Big
+  m_Script: {fileID: 11500000, guid: 2048094e5ce9c1b45b1d346fcc5afc8b, type: 3}
+  m_Name: Coin Factory
   m_EditorClassIdentifier: 
-  defaultSpeed: 5
-  defaultHealth: 1
-  defaultDamage: 3
+  prefab: {fileID: 1190722472061101, guid: 71ae96fbd956ad141a86010069f029d6, type: 3}
+  poolCapacity: 5

@@ -41,8 +41,6 @@ public class EnemyControl : UnitControl, IFactoryProduct, IStateUser
 
         damageReceiver.UnitGotHit += OnGettingHit;
 
-        
-
         for (int i = 0; i < stateList.Count; i++)
         {
             stateStorage[stateList[i].state] = Instantiate(stateList[i]);

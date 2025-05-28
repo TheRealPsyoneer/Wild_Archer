@@ -5843,8 +5843,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b780c8246eead4547919260fb1267032, type: 2}
   skinIndex: 1
   shootPositionOffset: {x: 0, y: 0.75, z: 0}
+  coinVFX: {fileID: 3457657797303845056}
   isShooting: 0
-  playerHeath: {fileID: -369043685195024279}
 --- !u!114 &5565229821720469028
 MonoBehaviour:
   m_ObjectHideFlags: 0
