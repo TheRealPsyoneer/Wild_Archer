@@ -754524,6 +754524,10 @@ PrefabInstance:
       propertyPath: m_AABB.m_Extent.z
       value: 0.31057742
       objectReference: {fileID: 0}
+    - target: {fileID: 3232951634605326914, guid: 6a2b5a3d985d3924eab4b2ad2a684704, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3255561962288090585, guid: 6a2b5a3d985d3924eab4b2ad2a684704, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -14.898106

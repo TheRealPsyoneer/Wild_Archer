@@ -10,45 +10,38 @@ public class ExpandZone : StepZone
     [SerializeField] int cost;
     [SerializeField] float delayBuy;
     [SerializeField] List<GameObject> walls;
-    [SerializeField] GameObject nextZone;
+    [SerializeField] PlatformPieceBuild nextZone;
     [SerializeField] GameObject buyZone;
 
     Coroutine buyingCoroutine;
 
     public override void OnSteppedOn()
     {
+        //Debug.Log("In");
         if (PlayerControl.instance.currentMoney >= cost)
         {
-            buyingCoroutine = StartCoroutine(StartBuying());
+            buyingCoroutine = StartCoroutine(BuyCoroutine());
         }
     }
 
-    
-
-    IEnumerator StartBuying()
+    IEnumerator BuyCoroutine()
     {
         yield return new WaitForSeconds(delayBuy);
         PlayerControl.instance.ChangeMoney(-cost);
 
-        SpawnNextZone();
-    }
-
-    public void SpawnNextZone()
-    {
         foreach (GameObject wall in walls)
         {
             wall.SetActive(false);
         }
         buyZone.SetActive(false);
 
-        nextZone.SetActive(true);
+        nextZone.StartBuilding();
     }
 
-    private void OnTriggerExit(Collider other)
+    public override void OnSteppedOff()
     {
-        if (other.CompareTag(PLAYER) && buyingCoroutine != null)
+        if (buyingCoroutine != null)
         {
-            Debug.Log("Stop");
             StopCoroutine(buyingCoroutine);
         }
     }

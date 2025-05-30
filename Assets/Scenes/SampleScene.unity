@@ -122,6 +122,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 13bb7127102fe014cbe8a2112833153c, type: 2}
+--- !u!198 &77309605 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198949322314184469, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
+  m_PrefabInstance: {fileID: 7908336320242880586}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &223776812
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,6 +557,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &859410386 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1266105773368782, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
+  m_PrefabInstance: {fileID: 7908336320242880586}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &952205420
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,6 +1083,43 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1303346166 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1977893847049704, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
+  m_PrefabInstance: {fileID: 7908336320242880586}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1303346168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303346166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d64018142f36a704c8e73c655e01942a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveDistance: 1
+  buildInterval: 0.5
+  pieces:
+  - {fileID: 2054819344}
+  - {fileID: 859410386}
+  - {fileID: 1446445493}
+  smoke:
+  - {fileID: 1772124665}
+  - {fileID: 1457174920}
+  - {fileID: 77309605}
+--- !u!1 &1446445493 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1580833287386121, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
+  m_PrefabInstance: {fileID: 7908336320242880586}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1457174920 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198648423303382850, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
+  m_PrefabInstance: {fileID: 7908336320242880586}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1473360167
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,6 +1217,11 @@ Transform:
   m_Father: {fileID: 523313181}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &1772124665 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198013986237973938, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
+  m_PrefabInstance: {fileID: 7908336320242880586}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1782852915
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,6 +1307,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinFactory: {fileID: 11400000, guid: 4b51e35db18bf3f44926059673fa6e71, type: 2}
+--- !u!1 &2054819344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1928977114429441, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
+  m_PrefabInstance: {fileID: 7908336320242880586}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2072437492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1403,7 +1460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1930526757843038, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4829496172591147, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
       propertyPath: m_RootOrder
@@ -1451,10 +1508,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224966846391412397, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.587
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224966846391412397, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6872174713068058454, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
+      propertyPath: delayBuy
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -57,7 +57,7 @@ public class PlayerControl : UnitControl, IStateUser
         CurrentDamage = unitStats.defaultDamage;
 
         //
-        currentMoney = 3;
+        currentMoney = 0;
         //
     }
 

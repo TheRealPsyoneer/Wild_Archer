@@ -6,7 +6,7 @@ public abstract class StepZone : MonoBehaviour
 {
     const string PLAYER = "Player";
 
-    public void OnTriggerEnter(Collider other)
+    protected void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(PLAYER))
         {
@@ -14,6 +14,14 @@ public abstract class StepZone : MonoBehaviour
         }
     }
 
+    protected void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag(PLAYER))
+        {
+            OnSteppedOff();
+        }
+    }
 
     public abstract void OnSteppedOn();
+    public abstract void OnSteppedOff();
 }
