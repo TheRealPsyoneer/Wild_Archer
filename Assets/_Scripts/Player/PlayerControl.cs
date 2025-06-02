@@ -57,7 +57,7 @@ public class PlayerControl : UnitControl, IStateUser
         CurrentDamage = unitStats.defaultDamage;
 
         //
-        currentMoney = 0;
+        currentMoney = 30;
         //
     }
 
@@ -120,13 +120,14 @@ public class PlayerControl : UnitControl, IStateUser
     public void ChangeMoney(int value)
     {
         currentMoney += value;
+        Debug.Log(currentMoney);
     }
-
+    //
     public void ChangeMoneyVisual(int value)
     {
 
     }
-
+    //
     public void PlayCoinVFX()
     {
         coinVFX.Play();

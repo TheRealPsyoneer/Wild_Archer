@@ -14,6 +14,12 @@ public class PlatformPieceBuild : MonoBehaviour
     public void StartBuilding()
     {
         gameObject.SetActive(true);
+
+        for (int i = 0; i < pieces.Count; i++)
+        {
+            pieces[i].SetActive(false);
+        }
+
         StartCoroutine(BuildPlatform(buildInterval));
     }
 
@@ -22,7 +28,15 @@ public class PlatformPieceBuild : MonoBehaviour
         for (int i=0; i<pieces.Count; i++)
         {
             pieces[i].SetActive(true);
-            pieces[i].transform.DOMoveY(pieces[i].transform.position.y - moveDistance, buildDuration).From().OnComplete(() => smoke[i].Play());
+            
+            pieces[i].transform.DOMoveY(pieces[i].transform.position.y - moveDistance, buildDuration).From()
+                .OnComplete(() =>
+                {
+                    if (smoke[i] != null)
+                    {
+                        smoke[i].Play();
+                    }
+                });
             yield return new WaitForSeconds(buildDuration);
         }
         

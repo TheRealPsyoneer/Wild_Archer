@@ -1,19 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-
 
 public class ExpandZone : StepZone
 {
-    const string PLAYER = "Player";
-
     [SerializeField] int cost;
+    [SerializeField] TextMeshPro costText;
     [SerializeField] float delayBuy;
     [SerializeField] List<GameObject> walls;
     [SerializeField] PlatformPieceBuild nextZone;
     [SerializeField] GameObject buyZone;
 
     Coroutine buyingCoroutine;
+
+    private void Start()
+    {
+        costText.text = $"{cost}";
+    }
 
     public override void OnSteppedOn()
     {
