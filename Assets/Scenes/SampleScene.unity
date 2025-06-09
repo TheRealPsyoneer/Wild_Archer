@@ -961,6 +961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinFactory: {fileID: 11400000, guid: 4b51e35db18bf3f44926059673fa6e71, type: 2}
+  crystalFactory: {fileID: 11400000, guid: d24213aedcb05b34ba4c3966c0805a6c, type: 2}
 --- !u!1 &2072437492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,10 +1110,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1930526757843038, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
       propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1977893847049704, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4829496172591147, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
@@ -1161,11 +1158,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224966846391412397, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.587
       objectReference: {fileID: 0}
     - target: {fileID: 224966846391412397, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb2e7f6cfae24204d91e900f492f3162, type: 3}

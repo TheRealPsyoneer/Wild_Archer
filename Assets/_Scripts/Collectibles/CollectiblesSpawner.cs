@@ -7,6 +7,7 @@ public class CollectiblesSpawner : MonoBehaviour
     public static CollectiblesSpawner Instance;
 
     [SerializeField] FactorySO coinFactory;
+    [SerializeField] FactorySO crystalFactory;
 
     private void Awake()
     {
@@ -18,5 +19,10 @@ public class CollectiblesSpawner : MonoBehaviour
     public void SpawnCoin(Vector3 spawnPosition)
     {
         coinFactory.GetProduct(spawnPosition);
+    }
+
+    public void SpawnCrystal(Vector3 spawnPosition)
+    {
+        crystalFactory.GetProduct(spawnPosition);
     }
 }

@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e9a035bbe67b4b42a57c756b6db71da, type: 3}
-  m_Name: Death
+  m_Script: {fileID: 11500000, guid: 2048094e5ce9c1b45b1d346fcc5afc8b, type: 3}
+  m_Name: Crystal Factory
   m_EditorClassIdentifier: 
-  state: 4
-  crystalSpawnChance: 50
+  prefab: {fileID: 1718931470205802, guid: 3918e2bcf78c0a240b277bfad8a3fa81, type: 3}
+  poolCapacity: 5

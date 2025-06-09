@@ -36,6 +36,7 @@ public class PlayerControl : UnitControl, IStateUser
     public bool isShooting;
 
     public int currentMoney { get; private set; }
+    public int currentCrystal { get; private set; }
     
 
     private void Awake()
@@ -58,6 +59,7 @@ public class PlayerControl : UnitControl, IStateUser
 
         //
         currentMoney = 30;
+        currentCrystal = 30;
         //
     }
 
@@ -120,7 +122,11 @@ public class PlayerControl : UnitControl, IStateUser
     public void ChangeMoney(int value)
     {
         currentMoney += value;
-        Debug.Log(currentMoney);
+    }
+
+    public void ChangeCrystal(int value)
+    {
+        currentCrystal += value;
     }
     //
     public void ChangeMoneyVisual(int value)

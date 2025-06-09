@@ -38,7 +38,7 @@ public class Arrow : UnitControl, IFactoryProduct
 
     private void FlyToTarget()
     {
-        if (!enemy.enabled)
+        if (enemy.CurrentHealth <= 0)
         {
             gameObject.SetActive(false);
             return;
